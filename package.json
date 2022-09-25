@@ -1,0 +1,14 @@
+{
+    "name": "smart-interview",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "install:frontend": "npm --prefix frontend install",
+        "install:backend": "npm --prefix backend install",
+        "install": "npm run install:frontend && npm run install:backend",
+        "build:frontend": "npm --prefix frontend run build",
+        "build:backend": "npm --prefix backend run build",
+        "build": "npm run build:frontend && npm run build:backend",
+        "start": "npm --prefix backend run start:prod"
+    }
+}
