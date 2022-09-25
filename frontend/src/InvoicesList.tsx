@@ -6,6 +6,8 @@ import {
   useTable,
   getDefaultSortOrder,
   DateField,
+  FilterDropdown,
+  Select,
 } from "@pankod/refine-antd";
 
 export interface IOrder {
@@ -47,6 +49,19 @@ export const InvoiceList: React.FC<IResourceComponentsProps> = () => {
           title="Status"
           render={(value) => <TextField value={value} />}
           defaultSortOrder={getDefaultSortOrder("status", sorter)}
+          filterDropdown={(props) => (
+            <FilterDropdown {...props}>
+              <Select
+                style={{ minWidth: 200 }}
+                mode="multiple"
+                placeholder="Select Status"
+              >
+                {" "}
+                <Select.Option value="Open">Open</Select.Option>
+                <Select.Option value="Closed">Closed</Select.Option>
+              </Select>
+            </FilterDropdown>
+          )}
           sorter
         />
         <Table.Column
